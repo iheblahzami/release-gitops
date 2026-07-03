@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: releaseapp
-          image: iheb49/releaseapp:latest   # CI updates this tag
+          image: iheb49/releaseapp:35f5950afee374aeaa7341125a205283c58a2f96
           ports:
             - containerPort: 8080
           readinessProbe:
