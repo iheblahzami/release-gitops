@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: releaseapp
-          image: releaseapp:latest   # Replace with your built image (e.g., your-dockerhub-user/releaseapp:1.0.0)
+          image: iheb49/releaseapp:latest   # CI updates this tag
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -31,3 +31,4 @@ spec:
               port: 8080
             initialDelaySeconds: 15
             periodSeconds: 20
+
