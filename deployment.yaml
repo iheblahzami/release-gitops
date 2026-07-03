@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: releaseapp
-          image: iheb49/releaseapp:35f5950afee374aeaa7341125a205283c58a2f96
+          image: iheb49/releaseapp:7df8ab96ec1f2846d307e6509b31ae2ccc8ac1cf
           ports:
             - containerPort: 8080
           readinessProbe:
