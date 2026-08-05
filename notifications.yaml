@@ -1,0 +1,10 @@
+apiVersion: argoproj.io/v1alpha1
+kind: NotificationTemplate
+metadata:
+  name: rollout-failed
+spec:
+  message: |
+    🚨 Rollout {{.rollout.name}} failed and was rolled back automatically.
+  slack:
+    channel: "#deployments"
+

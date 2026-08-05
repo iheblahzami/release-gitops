@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: releaseapp
+  labels:
+    app: releaseapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: releaseapp
+  template:
+    metadata:
+      labels:
+        app: releaseapp
+    spec:
+      containers:
+        - name: releaseapp
+          image: iheblahzami/releaseapp:latest
+          ports:
+            - containerPort: 8080
+  strategy:
+    canary:
+      steps:
+        - setWeight: 10
+        - pause: {duration: 60s}
+        - analysis:
+            templates:
+              - templateName: error-rate-check
+        - setWeight: 50
+        - pause: {duration: 60s}
+        - analysis:
+            templates:
+              - templateName: error-rate-check
+        - setWeight: 100
+
