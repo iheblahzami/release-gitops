@@ -4,6 +4,7 @@ metadata:
   name: release-app
   namespace: argocd
 spec:
+  project: default
   source:
     repoURL: https://github.com/iheblahzami/release-gitops
     path: .
