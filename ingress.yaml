@@ -4,7 +4,7 @@ metadata:
   name: releaseapp-ingress
 spec:
   rules:
-    - host: releaseapp.example.com
+    - host: 
       http:
         paths:
           - path: /
